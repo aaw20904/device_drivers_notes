@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1753811062 source:d:\c_win_proj\cp2112\cp2112\main.c
+	<stdio.h>
+	<windows.h>
+	"SLABCP2112.h"
+
+1654089442 d:\c_win_proj\cp2112\cp2112\slabcp2112.h
+	"Types.h"
+	"silabs_defs.h"
+	"silabs_sal.h"
+
+1654089458 d:\c_win_proj\cp2112\cp2112\types.h
+	<windows.h>
+	<stdint.h>
+
+1753722595 d:\c_win_proj\cp2112\cp2112\silabs_defs.h
+	"silabs_sal.h"
+
+1753722566 d:\c_win_proj\cp2112\cp2112\silabs_sal.h
+
