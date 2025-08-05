@@ -60,6 +60,8 @@ void slaveRxOneInit(uint8_t address, uint8_t* buffer) {
 	     (1)Load own address into  OAR1 and set here OA1EN
 		 (2)Enable RXNE interrupt.The incoming data is copied into a buffer by the pointer. Increment the pointer.
 		 (3)Enable STOP interrupt. Clear the pointer to 0.
+   		 (4)Enable ADDR interrupt (set ADDRIE).Clear this flag in the interrupt
+		     with the ADDRCF flag in the ICR.
 		 **/
 	//1) Init RAM buffer for slave
   i2c1RxDataPtr = buffer;
@@ -162,6 +164,8 @@ void slaveRxOneInit(uint8_t address, uint8_t* buffer) {
 	     (1)Load own address into  OAR1 and set here OA!EN
 		 (2)Enable RXNE interrupt.There incoming data copy into a buffer by the pointer.Increment the pointer.
 		 (3)Enable STOP interrupt. Clear the pointer to 0.
+   		 (4)Enable ADDR interrupt (set ADDRIE).Clear this flag in the interrupt
+		     with the ADDRCF flag in the ICR.
 		 **/
 	//1) Init RAM buffer for slave
   i2c1RxDataPtr = buffer;
