@@ -6,6 +6,21 @@
 ▄▀ █▀█ █▄░█ █▀▀   █▄▄ █▄█ ▀█▀ █▀▀ ▀▄
 ▀▄ █▄█ █░▀█ ██▄   █▄█ ░█░ ░█░ ██▄ ▄▀
 */
+//indexes (pointers) for rx/tx buffers
+volatile uint8_t txCounterI2C1 = 0;
+volatile uint8_t txCounterI2C2 = 0;
+volatile uint8_t rxCounterI2C1 = 0;
+volatile uint8_t rxCounterI2C2 = 0;
+//the buffers 
+volatile unsigned char rxBufferI2C1[16];
+volatile unsigned char rxBufferI2C2[16];
+volatile unsigned char txBufferI2C1[16];
+volatile unsigned char txBufferI2C2[16];
+//the semaphore
+volatile uint16_t states_I2C;
+//when communication in progress - these values can be assigned to a semaphore
+#define I2C1_PACKET 0x01
+#define I2C2_PACKET 0x02
 
 int MasterWriteOne(uint8_t addr, uint8_t *dataPtr)
 {
